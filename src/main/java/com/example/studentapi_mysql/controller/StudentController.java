@@ -4,7 +4,6 @@ import com.example.studentapi_mysql.dto.StudentsDto;
 import com.example.studentapi_mysql.model.Students;
 import com.example.studentapi_mysql.service.StudentServices;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -39,13 +38,15 @@ public class StudentController {
         services.updateStudentByID(student);
         return ResponseEntity.ok(HttpStatus.ACCEPTED);
     }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<HttpStatus> deleteById(@PathVariable Long id) {
         services.deleteStudentByID(id);
         return ResponseEntity.ok(HttpStatus.ACCEPTED);
     }
+
     @DeleteMapping
-    public ResponseEntity<HttpStatus> deleteAllStudents(){
+    public ResponseEntity<HttpStatus> deleteAllStudents() {
         services.deleteAllStudents();
         return ResponseEntity.ok(HttpStatus.ACCEPTED);
     }
