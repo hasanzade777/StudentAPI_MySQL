@@ -68,4 +68,12 @@ public class StudentServices implements StudentsMethods {
         repository.deleteAll();
     }
 
+    @Override
+    public List<StudentsDto> findByName(String name) {
+        List<Students> studentsList=repository.findByName(name);
+        List<StudentsDto> dto=mapper.mapToDtoAll(studentsList);
+        return dto;
+    }
+
+
 }

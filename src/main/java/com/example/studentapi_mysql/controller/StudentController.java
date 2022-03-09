@@ -50,4 +50,9 @@ public class StudentController {
         services.deleteAllStudents();
         return ResponseEntity.ok(HttpStatus.ACCEPTED);
     }
+    @GetMapping("/name/{name}")
+    public List<StudentsDto> getStudentByName(@PathVariable String name){
+        return services.findByName(name);
+    }
+
 }

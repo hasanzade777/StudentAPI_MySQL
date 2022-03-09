@@ -12,4 +12,5 @@ public interface StudentsMethods {
     List<StudentsDto> getAllStudents();
     void updateStudentByID(Students student);
     void deleteAllStudents();
+    List<StudentsDto> findByName(String name);
 }
